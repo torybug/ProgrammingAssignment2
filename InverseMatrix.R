@@ -1,15 +1,4 @@
-
-InverseFunction <- function(m) {
-	InverseMatrix <- data.frame()
-	InverseMatrix <- lapply(m,rbind(InverseMatrix,m[,i])
-return(InverseMatrix)
-}
-
-NewFunction <-function(x){
-	z<<- x +7
-	return(z)
-}
-
+##First function sets up a cached value for the inverse
 makeCacheMatrix <- function(x=numeric()){
 	inv <- NULL
 	set <- function(y){
@@ -23,6 +12,7 @@ makeCacheMatrix <- function(x=numeric()){
 		setinverse=setinverse,getinverse=getinverse)
 }
 
+##Second function calculates the inverse of the matrix, and sets it to the cached value
 cacheSolve <- function(x, ...) {
         inv <- x$getinverse()
         if(!is.null(inv)) {
